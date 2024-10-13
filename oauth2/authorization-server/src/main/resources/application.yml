@@ -1,0 +1,21 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: auth
+  config:
+    import:
+      - classpath:application-oauth2.yml
+  jpa:
+    open-in-view: false
+
+logging:
+  level:
+    org.springframework.security: trace
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
