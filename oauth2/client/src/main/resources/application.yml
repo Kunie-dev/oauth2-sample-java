@@ -9,7 +9,7 @@ spring:
     oauth2:
       client:
         registration:
-          local:
+          oidc-client:
             authorization-grant-type: authorization_code
             client-id: oidc-client
             client-secret: secret
@@ -18,7 +18,7 @@ spring:
               - openid
               - profile
         provider:
-          local:
+          oidc-client:
             authorization-uri: http://localhost:8082/oauth2/authorize
             token-uri: http://localhost:8082/oauth2/token
             user-info-uri: http://localhost:8082/oauth2/userinfo
@@ -31,3 +31,4 @@ spring:
 logging:
   level:
     org.springframework.security: trace
+    org.springframework.web.client.RestTemplate: trace
